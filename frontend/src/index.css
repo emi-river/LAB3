@@ -36,6 +36,7 @@ button {
   padding: 5px;
   font-weight: 500;
   max-width: 100px;
+<<<<<<< HEAD
 }
 
 .container {
@@ -79,4 +80,6 @@ button {
   width: 110px;
   cursor: pointer;
   font-weight: bold;
+=======
+>>>>>>> a0713f5e43f78cc6c97365f50fac825d06290dd8
 }
