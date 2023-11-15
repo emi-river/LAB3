@@ -23,6 +23,7 @@ input {
   border-radius: 10px;
   border-color: transparent;
   padding: 5px;
+  max-width: 250px;
 }
 
 button {
@@ -31,4 +32,5 @@ button {
   border-color: transparent;
   padding: 5px;
   font-weight: 500;
+  max-width: 125px;
 }
