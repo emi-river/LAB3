@@ -1,14 +1,9 @@
 import "./App.css";
-<<<<<<< HEAD
 import "./index.css";
-=======
-import Register from "./components/Register";
->>>>>>> a0713f5e43f78cc6c97365f50fac825d06290dd8
 
 function App() {
   return (
     <>
-<<<<<<< HEAD
       <div className="container">
         <div className="background-icon"></div>
         <div className="signin-container">
@@ -24,9 +19,6 @@ function App() {
           </div>
         </div>
       </div>
-=======
-      <Register />
->>>>>>> a0713f5e43f78cc6c97365f50fac825d06290dd8
     </>
   );
 }
