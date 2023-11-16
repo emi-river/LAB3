@@ -1,38 +1,26 @@
-import { useEffect, useState } from "react";
 import "./App.css";
-import "./index.css";
+import Home from "./components/Home";
+import Register from "./components/Register";
+import ForgotPassword from "./components/ForgotPassword";
+import { createHashRouter, Outlet, RouterProvider } from "react-router-dom";
+
+function Root() {
+  return <Outlet />;
+}
 
 function App() {
-  const [person, setPerson] = useState("");
+  const router = createHashRouter([
+    {
+      children: [
+        { element: <Home />, path: "/" },
+        { element: <Register />, path: "/register" },
+        { element: <ForgotPassword />, path: "/forgotpassword" },
+      ],
+      element: <Root />,
+    },
+  ]);
 
-  useEffect(() => {
-    fetch("/api/movies")
-      .then((response) => response.json())
-      .then((result) => {
-        setPerson(result);
-        console.log(person);
-      });
-  }, []);
-
-  return (
-    <>
-      <div className="container">
-        <div className="background-icon"></div>
-        <div className="signin-container">
-          <h1 className="signin-title">This is Social Tea</h1>
-          <input type="text" placeholder="Username" />
-          <input type="text" placeholder="Placeholder" />
-          <div className="forgot-password-text">
-            <p>Forgot password?</p>
-          </div>
-          <div className="signin-action-btns">
-            <button>Sign In</button>
-            <button>Register</button>
-          </div>
-        </div>
-      </div>
-    </>
-  );
+  return <RouterProvider router={router} />;
 }
 
 export default App;
