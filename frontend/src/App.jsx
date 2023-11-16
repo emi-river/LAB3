@@ -1,7 +1,19 @@
+import { useEffect, useState } from "react";
 import "./App.css";
 import "./index.css";
 
 function App() {
+  const [person, setPerson] = useState("");
+
+  useEffect(() => {
+    fetch("/api/movies")
+      .then((response) => response.json())
+      .then((result) => {
+        setPerson(result);
+        console.log(person);
+      });
+  }, []);
+
   return (
     <>
       <div className="container">
