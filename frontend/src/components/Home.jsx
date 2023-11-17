@@ -14,7 +14,7 @@ function Home() {
               Forgot password?
             </Link>
             <div className="flex-links">
-              <Link className="button" to="/">
+              <Link className="button" to="/postwall">
                 Sign in
               </Link>
               <Link className="button" to="/register">

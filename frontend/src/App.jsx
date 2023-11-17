@@ -2,6 +2,7 @@ import "./App.css";
 import Home from "./components/Home";
 import Register from "./components/Register";
 import ForgotPassword from "./components/ForgotPassword";
+import PostWall from "./components/PostWall";
 import { createHashRouter, Outlet, RouterProvider } from "react-router-dom";
 
 function Root() {
@@ -15,6 +16,7 @@ function App() {
         { element: <Home />, path: "/" },
         { element: <Register />, path: "/register" },
         { element: <ForgotPassword />, path: "/forgotpassword" },
+        { element: <PostWall />, path: "/postwall" },
       ],
       element: <Root />,
     },
