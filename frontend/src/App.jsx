@@ -3,11 +3,32 @@ import Home from "./components/Home";
 import Register from "./components/Register";
 import ForgotPassword from "./components/ForgotPassword";
 import PostWall from "./components/PostWall";
-import { createHashRouter, Outlet, RouterProvider } from "react-router-dom";
+import {
+  createHashRouter,
+  Outlet,
+  RouterProvider,
+  Navigate,
+} from "react-router-dom";
+import PropTypes from "prop-types";
 
 function Root() {
   return <Outlet />;
 }
+
+function PrivateRoute({ children }) {
+  // Switch to true to access the wall
+  const userLoggedIn = false;
+
+  if (!userLoggedIn) {
+    return <Navigate to="/" />;
+  }
+
+  return children;
+}
+
+PrivateRoute.propTypes = {
+  children: PropTypes.element.isRequired,
+};
 
 function App() {
   const router = createHashRouter([
@@ -16,7 +37,18 @@ function App() {
         { element: <Home />, path: "/" },
         { element: <Register />, path: "/register" },
         { element: <ForgotPassword />, path: "/forgotpassword" },
-        { element: <PostWall />, path: "/postwall" },
+        {
+          children: [
+            {
+              element: (
+                <PrivateRoute>
+                  <PostWall />
+                </PrivateRoute>
+              ),
+              path: "/postwall",
+            },
+          ],
+        },
       ],
       element: <Root />,
     },

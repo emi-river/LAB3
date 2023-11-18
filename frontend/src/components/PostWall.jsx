@@ -1,5 +1,4 @@
 import "../index.css";
-import "./ForgotPassword.css";
 
 function PostsWall() {
   return (
