@@ -16,8 +16,6 @@ import Profile from "./components/Profile";
 import Terms from "./GDPR/Terms";
 import Condition from "./GDPR/Condition";
 import Policy from "./GDPR/Policy";
-import { createHashRouter, Outlet, RouterProvider } from "react-router-dom";
-
 
 function Root() {
   return <Outlet />;
@@ -64,7 +62,6 @@ function App() {
         { element: <Condition />, path: "/condition" },
         { element: <Policy />, path: "/policy" },
         { element: <Profile />, path: "/profile" },
-
       ],
       element: <Root />,
     },
