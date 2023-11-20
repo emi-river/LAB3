@@ -1,4 +1,4 @@
-import "./Post.css";
+import "./PostTimeline.css";
 import PropTypes from "prop-types";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart } from "@fortawesome/free-solid-svg-icons";

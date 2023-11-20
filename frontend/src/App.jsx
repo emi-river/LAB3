@@ -17,7 +17,7 @@ function Root() {
 
 function PrivateRoute({ children }) {
   // Switch to true to access the wall
-  const userLoggedIn = false;
+  const userLoggedIn = true;
 
   if (!userLoggedIn) {
     return <Navigate to="/" />;

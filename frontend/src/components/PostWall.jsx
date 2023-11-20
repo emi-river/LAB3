@@ -1,5 +1,6 @@
 import "../index.css";
-import Post from "./post/Post";
+import Post from "./PostTimeline";
+import PostCreation from "./PostCreation";
 
 import profileImage1 from "../assets/profileImage1.jpg";
 import profileImage2 from "../assets/profileImage2.jpg";
@@ -38,6 +39,7 @@ const PostsWall = () => {
 
   return (
     <div className="posts">
+      <PostCreation posts={posts} />
       {posts.map((post) => (
         <Post post={post} key={post.id} />
       ))}
