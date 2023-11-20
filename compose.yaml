@@ -15,11 +15,11 @@ services:
     ports:
       - "80:80"
   database:
-    env_file:
-      - ./backend/.env
+    environment:
+      - POSTGRES_PASSWORD=secret
     healthcheck:
       interval: 1s
-      test: 'pg_isready --username=postgres'
+      test: "pg_isready --username=postgres"
     image: postgres
     volumes:
       - ./data:/var/lib/postgresql/data
