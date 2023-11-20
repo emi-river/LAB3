@@ -8,6 +8,11 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
-  margin-top: 10rem;
+  margin-top: 7rem;
   margin-right: 14rem;
+}
+
+.linkContainer {
+  display: flex;
+  justify-content: space-between;
 }
