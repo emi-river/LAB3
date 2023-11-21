@@ -1,4 +1,4 @@
-.post {
+.post-timeline {
   border-radius: 20px;
   background-color: #d9d9d9;
   margin: 20px auto;
@@ -11,11 +11,11 @@
       display: flex;
       align-items: center;
 
-      .user-info {
+      .user-info-timeline {
         display: flex;
         gap: 20px;
 
-        .profile-img {
+        .profile-img-timeline {
           width: 40px;
           height: 40px;
           border-radius: 50%;
@@ -23,11 +23,11 @@
           border: 1px solid #000000;
         }
 
-        .user-details {
+        .user-details-timeline {
           display: flex;
           flex-direction: column;
 
-          .username {
+          .username-timeline {
             text-decoration: none;
             color: #000000;
             font-size: 20px;
@@ -41,7 +41,7 @@
       }
     }
 
-    .content {
+    .content-timeline {
       margin: 20px 0;
 
       .posted-image {
@@ -53,12 +53,12 @@
         border-radius: 20px;
       }
 
-      .post-description {
+      .post-description-timeline {
         color: #000000;
       }
     }
 
-    .info {
+    .action-container {
       display: flex;
       gap: 10px;
 
@@ -66,10 +66,11 @@
         display: flex;
         gap: 10px;
 
-        .icon {
+        .icon-timeline {
           margin-left: 10px;
           font-size: 20px;
           color: #8b8989;
+          cursor: pointer;
         }
       }
     }

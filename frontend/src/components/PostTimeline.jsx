@@ -6,25 +6,29 @@ import { faCommentDots } from "@fortawesome/free-solid-svg-icons";
 
 const Posts = ({ post }) => {
   return (
-    <div className="post">
+    <div className="post-timeline">
       <div className="post-container">
         <div className="user-container">
-          <div className="user-info">
-            <img className="profile-img" src={post.profileImage} alt="" />
-            <div className="user-details">
-              <span className="username">{post.username}</span>
+          <div className="user-info-timeline">
+            <img
+              className="profile-img-timeline"
+              src={post.profileImage}
+              alt=""
+            />
+            <div className="user-details-timeline">
+              <span className="username-timeline">{post.username}</span>
               <span className="post-upload">{post.uploadTime}</span>
             </div>
           </div>
         </div>
-        <div className="content">
-          <p className="post-description">{post.description}</p>
+        <div className="content-timeline">
+          <p className="post-description-timeline">{post.description}</p>
           <img className="posted-image" src={post.postedImage} alt="" />
         </div>
-        <div className="info">
+        <div className="action-container">
           <div className="action-icons">
-            <FontAwesomeIcon className="icon" icon={faHeart} />
-            <FontAwesomeIcon className="icon" icon={faCommentDots} />
+            <FontAwesomeIcon className="icon-timeline" icon={faHeart} />
+            <FontAwesomeIcon className="icon-timeline" icon={faCommentDots} />
           </div>
         </div>
       </div>

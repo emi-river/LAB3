@@ -11,7 +11,7 @@
     align-items: center;
     padding: 30px;
 
-    .profile-img,
+    .profile-img-post-creation,
     icon {
       width: 50px;
       height: 50px;
@@ -20,9 +20,10 @@
       border: 1px solid #000000;
     }
 
-    .icon {
+    .icon-post-creation {
       font-size: 30px;
       color: #8b8989;
+      cursor: pointer;
     }
 
     .post-input {
