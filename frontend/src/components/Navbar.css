@@ -1,0 +1,29 @@
+.navbar-container {
+  position: sticky;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
+  background-color: #3e79a0;
+  margin: 20px auto;
+  max-width: 800px;
+  margin-bottom: 70px;
+  z-index: 100;
+}
+
+.left-side,
+.right-side {
+  display: flex;
+}
+
+.right-side a {
+  margin-left: 20px;
+}
+
+.navbar-container a {
+  color: #fbfafa;
+  text-align: center;
+  padding: 14px;
+  text-decoration: none;
+}
