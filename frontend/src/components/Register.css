@@ -16,3 +16,11 @@
   display: flex;
   justify-content: space-between;
 }
+
+.input {
+  margin-bottom: 20px;
+}
+
+.GDPR {
+  margin-bottom: 10px;
+}
