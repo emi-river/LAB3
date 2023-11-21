@@ -1,0 +1,26 @@
+.add-image-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: black;
+  text-align: center;
+  padding: 80px;
+  z-index: 1000;
+}
+
+.close-modal-btn,
+.send-modal-btn,
+.pick-image-btn {
+  cursor: pointer;
+  width: 300px;
+}
+
+.send-modal-btn {
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+.add-image-input {
+  background-color: grey;
+}

@@ -36,6 +36,25 @@ app.post('/person', async (request, response) => {
   response.status(500).send(rows)
 })
 
+const multer = require('multer')
+
+const storage = multer.diskStorage({
+  destination: (request, file, cb) => {
+    cb(null, path.join(__dirname, 'images'))
+  },
+
+  filename: (request, file, cb) => {
+    console.log(file)
+    cb(null, Date.now() + path.extname(file.originalname))
+  }
+})
+
+const upload = multer({ storage: storage })
+
+app.post('/api', upload.single('image'), (request, response) => {
+  response.send('Image Uploaded')
+})
+
 app.use(express.static(path.join(path.resolve(), 'public')))
 
 app.listen(3000, () => {
