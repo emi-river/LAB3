@@ -7,14 +7,18 @@ const PostCreation = ({ posts }) => {
   return (
     <div className="post-creation">
       <div className="post-creation-container">
-        <img className="profile-img" src={posts[0].profileImage} alt="" />
+        <img
+          className="profile-img-post-creation"
+          src={posts[0].profileImage}
+          alt=""
+        />
         <input
           className="post-input"
           type="text"
           placeholder="Anything you want to say?"
         />
         <div className="add-photo">
-          <FontAwesomeIcon className="icon" icon={faCamera} />
+          <FontAwesomeIcon className="icon-post-creation" icon={faCamera} />
         </div>
       </div>
     </div>
