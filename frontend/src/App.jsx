@@ -1,48 +1,50 @@
-import "./App.css";
-import Home from "./components/Home";
-import Register from "./components/Register";
-import ForgotPassword from "./components/ForgotPassword";
-import PostWall from "./components/PostWall";
+import './App.css'
+import Home from './components/Home'
+import Register from './components/Register'
+import ForgotPassword from './components/ForgotPassword'
+import Settings from './components/Settings'
+import PostWall from './components/PostWall'
 
 import {
   createHashRouter,
   Outlet,
   RouterProvider,
-  Navigate,
-} from "react-router-dom";
-import PropTypes from "prop-types";
+  Navigate
+} from 'react-router-dom'
+import PropTypes from 'prop-types'
 
-import Profile from "./components/Profile";
-import Terms from "./GDPR/Terms";
-import Condition from "./GDPR/Condition";
-import Policy from "./GDPR/Policy";
+import Profile from './components/Profile'
+import Terms from './GDPR/Terms'
+import Condition from './GDPR/Condition'
+import Policy from './GDPR/Policy'
 
 function Root() {
-  return <Outlet />;
+  return <Outlet />
 }
 
 function PrivateRoute({ children }) {
   // Switch to true to access the wall
-  const userLoggedIn = true;
+  const userLoggedIn = true
 
   if (!userLoggedIn) {
-    return <Navigate to="/" />;
+    return <Navigate to="/" />
   }
 
-  return children;
+  return children
 }
 
 PrivateRoute.propTypes = {
-  children: PropTypes.element.isRequired,
-};
+  children: PropTypes.element.isRequired
+}
 
 function App() {
   const router = createHashRouter([
     {
       children: [
-        { element: <Home />, path: "/" },
-        { element: <Register />, path: "/register" },
-        { element: <ForgotPassword />, path: "/forgotpassword" },
+        { element: <Home />, path: '/' },
+        { element: <Register />, path: '/register' },
+        { element: <ForgotPassword />, path: '/forgotpassword' },
+        { element: <Settings />, path: '/settings/:id' },
 
         {
           children: [
@@ -52,22 +54,22 @@ function App() {
                   <PostWall />
                 </PrivateRoute>
               ),
-              path: "/postwall",
-            },
-          ],
+              path: '/postwall'
+            }
+          ]
         },
 
-        { element: <PostWall />, path: "/postwall" },
-        { element: <Terms />, path: "/terms" },
-        { element: <Condition />, path: "/condition" },
-        { element: <Policy />, path: "/policy" },
-        { element: <Profile />, path: "/profile" },
+        { element: <PostWall />, path: '/postwall' },
+        { element: <Terms />, path: '/terms' },
+        { element: <Condition />, path: '/condition' },
+        { element: <Policy />, path: '/policy' },
+        { element: <Profile />, path: '/profile' }
       ],
-      element: <Root />,
-    },
-  ]);
+      element: <Root />
+    }
+  ])
 
-  return <RouterProvider router={router} />;
+  return <RouterProvider router={router} />
 }
 
-export default App;
+export default App
