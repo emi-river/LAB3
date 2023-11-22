@@ -37,7 +37,7 @@ app.get('/person/:id', async (request, response) => {
 app.post('/person', async (request, response) => {
   const { user, email, password } = request.body
   await client.query(
-    'INSERT INTO person(user, email, password) VALUES ($1, $2, $3);',
+    'INSERT INTO person(username, email, password) VALUES ($1, $2, $3);',
     [user, email, password]
   )
 
@@ -79,7 +79,7 @@ const storage = multer.diskStorage({
 
 const upload = multer({ storage: storage })
 
-app.post('/api', upload.single('image'), (request, response) => {
+app.post('/', upload.single('image'), (request, response) => {
   response.send('Image Uploaded')
 })
 
