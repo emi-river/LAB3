@@ -44,7 +44,7 @@ function Register() {
           <div className="flex-container">
             <div className="register">
               <h1>Register</h1>
-              <form onSubmit={addPerson}>
+              <form onSubmit={addPerson} method="POST">
                 <input
                   className="input"
                   type="text"
