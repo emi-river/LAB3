@@ -4,6 +4,7 @@ import { useState } from 'react'
 import ImageAddModal from './ImageAddModal.jsx'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCamera } from '@fortawesome/free-solid-svg-icons'
+import { Link } from 'react-router-dom'
 
 const PostCreation = ({ posts }) => {
   const [showModal, setShowModal] = useState(false)
@@ -19,11 +20,13 @@ const PostCreation = ({ posts }) => {
     <>
       <div className="post-creation">
         <div className="post-creation-container">
-          <img
-            className="profile-img-post-creation"
-            src={posts[0].profileImage}
-            alt=""
-          />
+          <Link to="/profile">
+            <img
+              className="profile-img-post-creation"
+              src={posts[0].profileImage}
+              alt=""
+            />
+          </Link>
           <input
             className="post-input"
             type="text"
