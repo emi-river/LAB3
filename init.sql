@@ -15,4 +15,13 @@ CREATE TABLE posts (
   REFERENCES person(personId)
 );
 
+CREATE TABLE images (
+  imageId serial PRIMARY KEY,
+  filename VARCHAR(255),
+  filepath VARCHAR(255),
+  image_upload TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  personId INT REFERENCES person(personId)
+  postId INT REFERENCES posts(postId)
+);
+
 INSERT INTO person (username, email, "password") VALUES ('test', 'test@test.com', 'testING'),('hej', 'hej@hej.com', 'HEJSAN');
