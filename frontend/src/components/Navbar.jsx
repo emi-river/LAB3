@@ -12,7 +12,7 @@ function Navbar() {
           </Link>
         </div>
         <div className="right-side">
-          <Link to="#">
+          <Link to="/settings/:id">
             <h3>Settings</h3>
           </Link>
           <Link to="/">

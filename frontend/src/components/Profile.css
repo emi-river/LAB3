@@ -1,8 +1,10 @@
 .profileContainer {
   display: flex;
+  justify-content: space-between;
   background-color: #fbfafa;
   border-radius: 10px;
   width: 60%;
+  margin: 30px auto;
 }
 
 .username {
@@ -19,13 +21,9 @@
   background-color: #fbfafa;
   border-radius: 10px;
   width: 60%;
+  margin: auto;
 }
 
 .post {
   margin: 15px 0;
-}
-
-.box {
-  display: flex;
-  justify-content: center;
 }

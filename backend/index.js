@@ -43,7 +43,7 @@ app.post('/person', async (request, response) => {
 
   const { rows } = await client.query('SELECT * FROM person;')
 
-  response.status(500).send(rows)
+  response.status(201).send(rows)
 })
 
 app.put('/person/:id', async (request, response) => {

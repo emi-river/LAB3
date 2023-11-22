@@ -44,7 +44,7 @@ function Register() {
           <div className="flex-container">
             <div className="register">
               <h1>Register</h1>
-              <form onSubmit={addPerson} method="POST">
+              <form onSubmit={addPerson}>
                 <input
                   className="input"
                   type="text"
@@ -63,7 +63,7 @@ function Register() {
                 />
                 <input
                   className="input"
-                  type="text"
+                  type="password"
                   onChange={(e) => setPassword(e.target.value)}
                   value={password}
                   placeholder="Password"
@@ -71,7 +71,7 @@ function Register() {
                 />
                 <input
                   className="input"
-                  type="text"
+                  type="password"
                   placeholder="Confirm password"
                   required
                 />
@@ -83,15 +83,15 @@ function Register() {
                 <p className="GDPR">
                   Read our privacy policy <Link to="/policy">here</Link>
                 </p>
-                <div className="linkContainer">
-                  <Link className="button" onClick={addPerson} to="/postwall">
-                    Sign Up
-                  </Link>
-                  <Link className="button" to="/">
-                    Cancel
-                  </Link>
-                </div>
               </form>
+              <div className="linkContainer">
+                <Link className="button" onClick={addPerson} to="/postwall">
+                  Sign Up
+                </Link>
+                <Link className="button" to="/">
+                  Cancel
+                </Link>
+              </div>
             </div>
           </div>
         </div>
