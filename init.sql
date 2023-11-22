@@ -8,11 +8,16 @@ CREATE TABLE person (
 
 CREATE TABLE posts (
   postId serial PRIMARY KEY,
-  "description" text,
-  "date" date NOT NULL,
+  midPersonId serial,
+  midDescriptionId serial,
+  midImageId serial,
   CONSTRAINT userId
-  FOREIGN KEY (postId)
-  REFERENCES person(personId)
+  FOREIGN KEY (midPersontId)
+  REFERENCES person(personId),
+  FOREIGN KEY (midImageId)
+  REFERENCES images(imageId),
+  FOREIGN KEY (midDescriptionId)
+  REFERENCES postDescription(postDescriptionId)
 );
 
 CREATE TABLE images (
@@ -23,5 +28,10 @@ CREATE TABLE images (
   personId INT REFERENCES person(personId)
   postId INT REFERENCES posts(postId)
 );
+
+CREATE TABLE postDescription(
+  postDescriptionId serial PRIMARY KEY,
+  FOREIGN KEY 
+)
 
 INSERT INTO person (username, email, "password") VALUES ('test', 'test@test.com', 'testING'),('hej', 'hej@hej.com', 'HEJSAN');
