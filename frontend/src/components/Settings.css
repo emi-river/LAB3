@@ -29,6 +29,7 @@
   gap: 5px;
 }
 
+.settings button,
 .setting-buttons button {
   border: 1px solid #3e79a0;
 }
