@@ -4,7 +4,7 @@ import './ImageAddModal.css'
 const ImageAddModal = ({ closeModal }) => {
   const handleImageFormSubmit = async (e) => {
     e.preventDefault()
-    const formData = new formData(e.target)
+    const formData = new FormData(e.target)
 
     try {
       const response = await fetch('/', {
