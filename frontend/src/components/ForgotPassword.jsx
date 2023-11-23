@@ -1,5 +1,6 @@
-import "../index.css";
-import "./ForgotPassword.css";
+import '../index.css'
+import './ForgotPassword.css'
+import { Link } from 'react-router-dom'
 
 function ForgotPassword() {
   return (
@@ -12,12 +13,17 @@ function ForgotPassword() {
               Enter your email below to recive your password reset instructions
             </p>
             <input type="email" placeholder="Email" />
-            <button>Send</button>
+            <div className="link-container">
+              <Link className="button">Send</Link>
+              <Link className="button" to="/">
+                Cancel
+              </Link>
+            </div>
           </div>
         </div>
       </div>
     </>
-  );
+  )
 }
 
-export default ForgotPassword;
+export default ForgotPassword
