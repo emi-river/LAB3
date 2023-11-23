@@ -54,7 +54,7 @@ app.put('/person/:id', async (request, response) => {
     [username, email, password, id]
   )
   const { rows } = await client.query(
-    'SELECT FROM person WHERE personId = $1;',
+    'SELECT * FROM person WHERE personId = $1;',
     [id]
   )
   response.send(rows)
