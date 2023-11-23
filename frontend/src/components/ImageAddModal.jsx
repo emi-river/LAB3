@@ -7,7 +7,7 @@ const ImageAddModal = ({ closeModal }) => {
     const formData = new FormData(e.target)
 
     try {
-      const response = await fetch('/', {
+      const response = await fetch('/api/', {
         method: 'POST',
         body: formData
       })

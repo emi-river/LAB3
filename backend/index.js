@@ -81,7 +81,7 @@ const storage = multer.diskStorage({
 
 const upload = multer({ storage: storage })
 
-app.post('/', upload.single('image'), (request, response) => {
+app.post('/api/', upload.single('image'), (request, response) => {
   try {
     response.send('Image Uploaded')
   } catch (error) {
