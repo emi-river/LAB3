@@ -48,10 +48,10 @@ app.post('/person', async (request, response) => {
 
 app.put('/person/:id', async (request, response) => {
   const id = request.params.id
-  const { username, email, password } = request.body
+  const { username, email, password, bio } = request.body
   await client.query(
-    'UPDATE person SET username = $1, email = $2, password = $3 WHERE personId = $4;',
-    [username, email, password, id]
+    'UPDATE person SET username = $1, email = $2, password = $3, bio = $4 WHERE personId = $5;',
+    [username, email, password, bio, id]
   )
   const { rows } = await client.query(
     'SELECT * FROM person WHERE personId = $1;',
