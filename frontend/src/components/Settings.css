@@ -34,6 +34,11 @@
   border: 1px solid #3e79a0;
 }
 
+.settings label {
+  display: flex;
+  flex-direction: column;
+}
+
 .align-center {
   text-align: center;
 }
