@@ -18,4 +18,4 @@ CREATE TABLE images (
   REFERENCES person(personId)
 );
 
-INSERT INTO person (username, email, "password") VALUES ('test', 'test@test.com', 'testING'),('hej', 'hej@hej.com', 'HEJSAN');
+INSERT INTO person (username, email, "password", bio) VALUES ('Simba66', 'simba66@hotmail.com', '17Ui', 'Living life one photo at a time'), ('Joey111', 'joey111@gmail.com', '66Uia', 'Artist by day, dreamer by night'), ('Sandra88', 'sandra88@gmail.com', '4321UA', 'Dancing to the rhythm of my own heart'), ('boss765', 'boss765@hotmail.com', '1234', 'On a journey to explore the extraordinary'), ('angel16', 'angel16@hotmail.com', 'Auq185', 'Embracing the chaos with a smile');
