@@ -82,7 +82,12 @@ const storage = multer.diskStorage({
 const upload = multer({ storage: storage })
 
 app.post('/', upload.single('image'), (request, response) => {
-  response.send('Image Uploaded')
+  try {
+    response.send('Image Uploaded')
+  } catch (error) {
+    console.error('Error uploading image', error)
+    response.status(500).send('Internal Server Error')
+  }
 })
 
 app.use(express.static(path.join(path.resolve(), 'public')))
