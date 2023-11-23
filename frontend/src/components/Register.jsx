@@ -86,7 +86,7 @@ function Register() {
               </form>
               <div className="linkContainer">
                 <Link className="button" onClick={addPerson} to="/postwall">
-                  Sign Up
+                  Create
                 </Link>
                 <Link className="button" to="/">
                   Cancel

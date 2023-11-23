@@ -59,11 +59,11 @@ function App() {
           ]
         },
 
-        { element: <PostWall />, path: '/postwall' },
+        { element: <PostWall />, path: '/postwall/:id' },
         { element: <Terms />, path: '/terms' },
         { element: <Condition />, path: '/condition' },
         { element: <Policy />, path: '/policy' },
-        { element: <Profile />, path: '/profile' }
+        { element: <Profile />, path: '/profile/:id' }
       ],
       element: <Root />
     }
