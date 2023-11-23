@@ -31,7 +31,7 @@ function Settings() {
       },
       method: 'PUT'
     })
-      .then((response) => response.json())
+      .then((response) => response)
       .then(() => {
         setUpdateMessage(true)
       })
@@ -41,7 +41,7 @@ function Settings() {
     fetch(`/person/${id}`, {
       method: 'DELETE'
     })
-      .then((response) => response.json())
+      .then((response) => response)
       .then(() => {
         setDeleteMessage(true)
       })
