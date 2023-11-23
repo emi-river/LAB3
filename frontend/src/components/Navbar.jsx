@@ -12,8 +12,8 @@ function Navbar() {
           </Link>
         </div>
         <div className="right-side">
-          <Link to="/settings/:id">
-            <h3>Settings</h3>
+          <Link to="/profile/:id">
+            <h3>Profile</h3>
           </Link>
           <Link to="/">
             <h3>Sign out</h3>
