@@ -2,7 +2,7 @@
   width: 50%;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 3rem;
+  margin-top: 4rem;
   background-color: #fff;
   display: flex;
   flex-direction: column;
@@ -28,6 +28,10 @@ h3 {
 
 .container span {
   font-weight: bold;
+}
+
+.container button {
+  border: 1px solid #3e79a0;
 }
 
 @media (max-width: 640px) {

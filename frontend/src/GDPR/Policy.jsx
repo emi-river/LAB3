@@ -1,9 +1,15 @@
 import './Policy.css'
+import { useNavigate } from 'react-router-dom'
 
 function Policy() {
+  const back = useNavigate()
+  const goBack = () => {
+    back(-1)
+  }
   return (
     <>
       <div className="container">
+        <button onClick={goBack}>Go back!</button>
         <h1>Privacy Policy for Social Tea</h1>
         <h2>Privacy Policy</h2>
         <p>
