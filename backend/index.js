@@ -54,14 +54,14 @@ app.put('/person/:id', async (request, response) => {
     [username, email, password, id]
   )
   const { rows } = await client.query('SELECT * FROM person;')
-  response.json(rows)
+  response.send(rows)
 })
 
 app.delete('/person/:id', async (request, response) => {
   const id = request.params.id
   await client.query('DELETE FROM person WHERE personId = $1;', [id])
   const { rows } = await client.query('SELECT * FROM person;')
-  response.json(rows)
+  response.send(rows)
 })
 
 const multer = require('multer')
