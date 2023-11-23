@@ -8,7 +8,7 @@ const ImageAddModal = ({ closeModal }) => {
         <form
           className="pick-image-btn"
           method="POST"
-          action="/api"
+          action="/"
           encType="multipart/form-data"
         >
           <input className="add-image-input" type="file" name="image" />
