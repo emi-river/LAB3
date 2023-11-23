@@ -1,15 +1,17 @@
 import './Settings.css'
 import { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { useParams, useNavigate } from 'react-router-dom'
 
 function Settings() {
   const [personDetails, setPersonDetails] = useState(null)
   const [userName, setUserName] = useState('')
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
+  const [bio, setBio] = useState('')
   const [updateMessage, setUpdateMessage] = useState(false)
   const [deleteMessage, setDeleteMessage] = useState(false)
   const { id } = useParams()
+  const back = useNavigate()
 
   useEffect(() => {
     fetch(`/api/person/${id}`)
@@ -24,7 +26,8 @@ function Settings() {
       body: JSON.stringify({
         username: userName,
         email: email,
-        password: password
+        password: password,
+        bio: bio
       }),
       headers: {
         'Content-Type': 'application/json'
@@ -41,6 +44,10 @@ function Settings() {
     }).then(() => {
       setDeleteMessage(true)
     })
+  }
+
+  const goBack = () => {
+    back(-1)
   }
 
   return (
@@ -67,10 +74,16 @@ function Settings() {
                 type="password"
                 placeholder="Password"
               />
+              <input
+                defaultValue={personDetail.bio}
+                onChange={(event) => setBio(event.target.value)}
+                placeholder="Bio text"
+              />
               <div className="setting-buttons">
                 <button onClick={updateDetails}>Update</button>
                 <button onClick={deleteDetails}>Delete</button>
               </div>
+              <button onClick={goBack}>Go back!</button>
               {updateMessage && <p>Your settings has been updated!</p>}
               {deleteMessage && <p>Your account has been deleted!</p>}
             </div>
