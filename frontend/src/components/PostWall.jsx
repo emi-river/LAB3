@@ -14,6 +14,7 @@ const PostsWall = () => {
   const posts = [
     {
       postId: 1,
+      userId: 1,
       username: 'hejsan',
       description: 'Paraply',
       profileImage: profileImage1,
@@ -22,6 +23,7 @@ const PostsWall = () => {
     },
     {
       postId: 2,
+      userId: 2,
       username: 'svejsan',
       description: 'Lampa',
       profileImage: profileImage2,
@@ -30,6 +32,7 @@ const PostsWall = () => {
     },
     {
       postId: 3,
+      userId: 3,
       username: 'example',
       description: 'Zen zone',
       profileImage: profileImage3,
@@ -40,7 +43,7 @@ const PostsWall = () => {
 
   return (
     <>
-      <Navbar />
+      <Navbar posts={posts} />
       <div className="posts">
         <PostCreation posts={posts} />
         {posts.map((post) => (

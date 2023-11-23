@@ -1,8 +1,11 @@
 import '../index.css'
 import './Navbar.css'
+import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom'
 
-function Navbar() {
+function Navbar({ post }) {
+  const userId = post?.userId || ''
+
   return (
     <>
       <div className="navbar-container">
@@ -12,7 +15,7 @@ function Navbar() {
           </Link>
         </div>
         <div className="right-side">
-          <Link to="/profile/:id">
+          <Link to={`/profile/${userId}`}>
             <h3>Profile</h3>
           </Link>
           <Link to="/">
@@ -22,6 +25,12 @@ function Navbar() {
       </div>
     </>
   )
+}
+
+Navbar.propTypes = {
+  post: PropTypes.shape({
+    userId: PropTypes.number.isRequired
+  }).isRequired
 }
 
 export default Navbar
