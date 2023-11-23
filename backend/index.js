@@ -53,15 +53,17 @@ app.put('/person/:id', async (request, response) => {
     'UPDATE person SET username = $1, email = $2, password = $3 WHERE personId = $4;',
     [username, email, password, id]
   )
-  const { rows } = await client.query('SELECT * FROM person;')
+  const { rows } = await client.query(
+    'SELECT * FROM person WHERE personId = $1;',
+    [id]
+  )
   response.send(rows)
 })
 
 app.delete('/person/:id', async (request, response) => {
   const id = request.params.id
   await client.query('DELETE FROM person WHERE personId = $1;', [id])
-  const { rows } = await client.query('SELECT * FROM person;')
-  response.send(rows)
+  response.send(`User deleted with ID: ${id}`)
 })
 
 const multer = require('multer')

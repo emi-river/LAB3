@@ -12,7 +12,7 @@ function Settings() {
   const { id } = useParams()
 
   useEffect(() => {
-    fetch(`/person/${id}`)
+    fetch(`/api/person/${id}`)
       .then((response) => response.json())
       .then((result) => {
         setPersonDetails(result)
@@ -20,7 +20,7 @@ function Settings() {
   }, [id])
 
   function updateDetails() {
-    fetch(`/person/${id}`, {
+    fetch(`/api/person/${id}`, {
       body: JSON.stringify({
         username: userName,
         email: email,
@@ -30,15 +30,17 @@ function Settings() {
         'Content-Type': 'application/json'
       },
       method: 'PUT'
-    }).then((response) => response.json())
-    setUpdateMessage(true)
+    }).then(() => {
+      setUpdateMessage(true)
+    })
   }
 
   function deleteDetails() {
-    fetch(`/person/${id}`, {
+    fetch(`/api/person/${id}`, {
       method: 'DELETE'
-    }).then((response) => response.json())
-    setDeleteMessage(true)
+    }).then(() => {
+      setDeleteMessage(true)
+    })
   }
 
   return (
