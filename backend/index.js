@@ -19,7 +19,7 @@ const client = new Client({
 client.connect()
 
 app.get('/person', async (_request, response) => {
-  const { rows } = await client.query('SELECT * FROM person;')
+  const { rows } = await client.query('SELECT max(personId) FROM person;')
 
   response.send(rows)
 })
@@ -70,7 +70,7 @@ const multer = require('multer')
 
 const storage = multer.diskStorage({
   destination: (request, file, cb) => {
-    cb(null, path.join(__dirname, 'backend', 'images'))
+    cb(null, path.join(__dirname, 'images'))
   },
 
   filename: (request, file, cb) => {
@@ -81,13 +81,8 @@ const storage = multer.diskStorage({
 
 const upload = multer({ storage: storage })
 
-app.post('/api/', upload.single('image'), (request, response) => {
-  try {
-    response.send('Image Uploaded')
-  } catch (error) {
-    console.error('Error uploading image', error)
-    response.status(500).send('Internal Server Error')
-  }
+app.post('/', upload.single('image'), (request, response) => {
+  response.send('Image Uploaded')
 })
 
 app.use(express.static(path.join(path.resolve(), 'public')))

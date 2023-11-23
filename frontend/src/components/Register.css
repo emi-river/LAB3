@@ -24,3 +24,7 @@
 .GDPR {
   margin-bottom: 10px;
 }
+.error-text {
+  color: #5a060a;
+  font-weight: bolder;
+}
