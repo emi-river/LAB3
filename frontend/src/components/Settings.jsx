@@ -30,21 +30,17 @@ function Settings() {
         'Content-Type': 'application/json'
       },
       method: 'PUT'
+    }).then(() => {
+      setUpdateMessage(true)
     })
-      .then((response) => response.json())
-      .then(() => {
-        setUpdateMessage(true)
-      })
   }
 
   function deleteDetails() {
     fetch(`/person/${id}`, {
       method: 'DELETE'
+    }).then(() => {
+      setDeleteMessage(true)
     })
-      .then((response) => response.json())
-      .then(() => {
-        setDeleteMessage(true)
-      })
   }
 
   return (
