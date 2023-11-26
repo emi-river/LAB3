@@ -11,7 +11,7 @@ function Settings() {
   const [updateMessage, setUpdateMessage] = useState(false)
   const [deleteMessage, setDeleteMessage] = useState(false)
   const { id } = useParams()
-  const back = useNavigate()
+  const navigate = useNavigate()
 
   useEffect(() => {
     fetch(`/api/person/${id}`)
@@ -44,10 +44,13 @@ function Settings() {
     }).then(() => {
       setDeleteMessage(true)
     })
+    setTimeout(() => {
+      navigate('/')
+    }, 2000)
   }
 
   const goBack = () => {
-    back(-1)
+    navigate(-1)
   }
 
   return (
