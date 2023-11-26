@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHeart } from '@fortawesome/free-solid-svg-icons'
 import { faCommentDots } from '@fortawesome/free-solid-svg-icons'
+import { LazyLoadImage } from 'react-lazy-load-image-component'
 
 const Posts = ({ post }) => {
   return (
@@ -12,7 +13,7 @@ const Posts = ({ post }) => {
         <div className="user-container">
           <div className="user-info-timeline">
             <Link to={`/profile/${post.userId}`}>
-              <img
+              <LazyLoadImage
                 className="profile-img-timeline"
                 src={post.profileImage}
                 alt=""
@@ -26,7 +27,11 @@ const Posts = ({ post }) => {
         </div>
         <div className="content-timeline">
           <p className="post-description-timeline">{post.description}</p>
-          <img className="posted-image" src={post.postedImage} alt="" />
+          <LazyLoadImage
+            className="posted-image"
+            src={post.postedImage}
+            alt=""
+          />
         </div>
         <div className="action-container">
           <div className="action-icons">
