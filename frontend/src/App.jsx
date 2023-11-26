@@ -24,31 +24,10 @@ Terms.preload()
 Condition.preload()
 Policy.preload()
 
-import {
-  createHashRouter,
-  Outlet,
-  RouterProvider,
-  Navigate
-} from 'react-router-dom'
-import PropTypes from 'prop-types'
+import { createHashRouter, Outlet, RouterProvider } from 'react-router-dom'
 
 function Root() {
   return <Outlet />
-}
-
-function PrivateRoute({ children }) {
-  // Switch to true to access the wall
-  const userLoggedIn = true
-
-  if (!userLoggedIn) {
-    return <Navigate to="/" />
-  }
-
-  return children
-}
-
-PrivateRoute.propTypes = {
-  children: PropTypes.element.isRequired
 }
 
 function App() {
