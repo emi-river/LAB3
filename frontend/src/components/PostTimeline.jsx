@@ -15,7 +15,9 @@ const Posts = ({ post }) => {
             <Link to={`/profile/${post.userId}`}>
               <LazyLoadImage
                 className="profile-img-timeline"
+                width={40}
                 src={post.profileImage}
+                height={40}
                 alt=""
               />
             </Link>
@@ -29,7 +31,9 @@ const Posts = ({ post }) => {
           <p className="post-description-timeline">{post.description}</p>
           <LazyLoadImage
             className="posted-image"
+            width="100%"
             src={post.postedImage}
+            height={800}
             alt=""
           />
         </div>
