@@ -14,6 +14,16 @@ const Terms = lazyWithPreload(() => import('./GDPR/Terms'))
 const Condition = lazyWithPreload(() => import('./GDPR/Condition'))
 const Policy = lazyWithPreload(() => import('./GDPR/Policy'))
 
+Home.preload()
+Register.preload()
+ForgotPassword.preload()
+Settings.preload()
+PostWall.preload()
+Profile.preload()
+Terms.preload()
+Condition.preload()
+Policy.preload()
+
 import {
   createHashRouter,
   Outlet,
