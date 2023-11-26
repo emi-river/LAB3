@@ -33,3 +33,12 @@
     }
   }
 }
+.username {
+  width: auto;
+  margin: 0;
+}
+.usernameContainer {
+  display: flex;
+  justify-content: left;
+  margin-left: 230px;
+}
