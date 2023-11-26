@@ -6,7 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCamera } from '@fortawesome/free-solid-svg-icons'
 import { Link } from 'react-router-dom'
 
-const PostCreation = ({ posts }) => {
+const PostCreation = ({ posts, userData }) => {
   const [showModal, setShowModal] = useState(false)
 
   const handleCameraClick = () => {
@@ -18,6 +18,9 @@ const PostCreation = ({ posts }) => {
   }
   return (
     <>
+      <p className="username">
+        {userData && userData.length > 0 ? userData[0].username : 'USERNAME'}
+      </p>
       <div className="post-creation">
         <div className="post-creation-container">
           <Link to="/profile">
@@ -45,7 +48,13 @@ const PostCreation = ({ posts }) => {
 PostCreation.propTypes = {
   posts: PropTypes.shape({
     profileImage: PropTypes.string.isRequired
-  }).isRequired
+  }).isRequired,
+  userData: PropTypes.arrayOf(
+    PropTypes.shape({
+      username: PropTypes.string.isRequired,
+      profileImage: PropTypes.string.isRequired
+    })
+  ).isRequired
 }
 
 export default PostCreation

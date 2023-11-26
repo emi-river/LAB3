@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/emi-river/LAB3#readme",
   "dependencies": {
-    "dotenv": "^16.3.1"
+    "dotenv": "^16.3.1",
+    "react-lazy-load-image-component": "^1.6.0"
   }
 }

@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500&family=Shadows+Into+Light&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500&family=Shadows+Into+Light&display=swap');
 :root {
   background-color: #3e79a0;
   color: #fbfafa;
@@ -8,7 +8,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Cormorant Garamond", serif;
+  font-family: 'Cormorant Garamond', serif;
 }
 
 .align-right {
@@ -16,7 +16,7 @@
 }
 
 .background-icon {
-  background-image: url("/home-page-icon.png");
+  background-image: url('/home-page-icon.png');
   height: 90vh;
   background-repeat: no-repeat;
   background-size: 40vw;

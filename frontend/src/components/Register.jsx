@@ -52,7 +52,8 @@ function Register() {
         setPassword('')
         setConfirmPassword('')
         setPasswordsMatch(true)
-        nav(`/postwall/${userId}`)
+        console.log('UserId:', userId)
+        nav(`/postwall/${String(userId[0].max)}`)
       })
       .catch((error) => {
         console.log(error)
