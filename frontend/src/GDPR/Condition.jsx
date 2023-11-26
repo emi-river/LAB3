@@ -7,7 +7,7 @@ function Condition() {
       <div className="container">
         <h1>Condition of Use for Social Tea</h1>
         <p>
-          <span>Last updated</span>: November 23, 2023
+          <span>Last updated</span>: November 24, 2023
         </p>
         <p>
           Welcome to a community, where you can share your interests and express
